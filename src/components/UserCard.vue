@@ -16,27 +16,27 @@ function redirect(id: string) {
 <template>
   <div class="card" v-for="user in data.data" v-on:click="redirect(user.id)">
     <div class="header">
-      <div class="tttl">{{ user.name }}</div>
-      <div class="tttl">{{ user.username }}</div>
+      <div class="tttl">{{ user?.name }}</div>
+      <div class="tttl">{{ user?.username }}</div>
     </div>
     <div class="bdy">
-      <div class="txt">Email: {{ user.email }}</div>
-      <div class="txt">Phone: {{ user.phone }}</div>
-      <div class="txt">Website: {{ user.website }}</div>
+      <div class="txt">Email: {{ user?.email }}</div>
+      <div class="txt">Phone: {{ user?.phone }}</div>
+      <div class="txt">Website: {{ user?.website }}</div>
       <div class="nested">
         <div class="txt">Address:</div>
-        <div class="txt nest">Street: {{ user.address.street }}</div>
-        <div class="txt nest">Suite: {{ user.address.suite }}</div>
-        <div class="txt nest">City: {{ user.address.city }}</div>
-        <div class="txt nest">ZipCode: {{ user.address.zipcode }}</div>
-        <div class="txt nest">Geo Lat: {{ user.address.geo.lat }}</div>
-        <div class="txt nest">Geo Lng: {{ user.address.geo.lng }}</div>
+        <div class="txt nest">Street: {{ user.address?.street }}</div>
+        <div class="txt nest">Suite: {{ user.address?.suite }}</div>
+        <div class="txt nest">City: {{ user.address?.city }}</div>
+        <div class="txt nest">ZipCode: {{ user.address?.zipcode }}</div>
+        <div class="txt nest">Geo Lat: {{ user.address?.geo.lat }}</div>
+        <div class="txt nest">Geo Lng: {{ user.address?.geo.lng }}</div>
       </div>
       <div class="nested">
         <div class="txt">Company:</div>
-        <div class="txt nest">Name: {{ user.company.name }}</div>
-        <div class="txt nest">CatchPharse: {{ user.company.catchPhrase }}</div>
-        <div class="txt nest">BS: {{ user.company.bs }}</div>
+        <div class="txt nest">Name: {{ user.company?.name }}</div>
+        <div class="txt nest">CatchPharse: {{ user.company?.catchPhrase }}</div>
+        <div class="txt nest">BS: {{ user.company?.bs }}</div>
       </div>
     </div>
   </div>
@@ -44,6 +44,7 @@ function redirect(id: string) {
 
 <style scoped>
 .card {
+  max-width: 350px;
   margin: 1rem;
   border: 2px solid #a2d2ff;
   border-radius: 5px;
