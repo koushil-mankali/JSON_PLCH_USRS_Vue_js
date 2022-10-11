@@ -1,15 +1,16 @@
 <script lang="ts" setup>
 import { defineProps } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const data = defineProps({
   data: Object,
 });
-console.log(data.data, "p");
 
-function redirect(id: string){
-  console.log(id, 'id');
+function redirect(id: string) {
+  router.push(`/user/${id}`);
 }
-
 </script>
 
 <template>
@@ -68,8 +69,9 @@ function redirect(id: string){
   font-weight: 700;
 }
 
-.nested, .nest{
-    padding: 0 0.5rem;
+.nested,
+.nest {
+  padding: 0 0.5rem;
 }
 
 .txt {

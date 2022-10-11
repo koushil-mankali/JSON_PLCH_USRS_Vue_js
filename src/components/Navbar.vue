@@ -6,11 +6,11 @@
 
 <template>
     <nav>
-        <div class="ttl">JSON PLCH USRS Vue js</div>
+        <router-link to="/" class="ttl">JSON PLCH USRS Vue js</router-link>
         <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li><router-link to="/" class="ttl">Home</router-link></li>
+            <li><router-link to="/about" class="ttl">About</router-link></li>
+            <li><router-link to="/contact" class="ttl">Contact</router-link></li>
         </ul>
     </nav>
 </template>
@@ -31,6 +31,7 @@ nav{
 
 .ttl{
     cursor: pointer;
+    text-decoration: none;
 }
 
 ul{
